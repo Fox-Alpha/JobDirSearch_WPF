@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+//using PropertyChanged;
+using Stylet;
+using StyletIoC;
 
 namespace JobDirSearch_WPF.Views
 {
@@ -19,7 +22,8 @@ namespace JobDirSearch_WPF.Views
 	/// </summary>
 	public partial class MainView : Window
 	{
-		public MainView ()
+
+        public MainView ()
 		{
 			InitializeComponent ();
 		}

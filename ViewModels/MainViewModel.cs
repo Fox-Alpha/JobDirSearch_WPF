@@ -9,5 +9,6 @@ namespace JobDirSearch_WPF.ViewModels
 {
 	class MainViewModel : Screen
 	{
-	}
+        public bool TopMost { get; set; } = false;
+    }
 }
