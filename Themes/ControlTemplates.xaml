@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:local="clr-namespace:JobDirSearch_WPF.Themes">
+
+	<DataTemplate x:Key="JobDirListItemTemplate">
+		<Expander IsExpanded="True" Margin="0,0,0,5">
+			<Expander.Header>
+				<Grid Width="250">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="2*"></ColumnDefinition>
+						<ColumnDefinition Width="1*"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Label Content="[JOBPfad]" Grid.Column="0"/>
+					<Label Content="Gefunden:" Grid.Column="1"/>
+					<Label Content="XXX" Grid.Column="1" HorizontalAlignment="Right"/>
+				</Grid>
+			</Expander.Header>
+			<Grid Background="{DynamicResource WindowBackgroundBrush}">
+				<ItemsControl ItemTemplate="{DynamicResource JobResultListItemTemplate}" AlternationCount="2" /> <!--  ItemsSource="{Binding ServerManagement.ServerList}" -->
+			</Grid>
+		</Expander>
+	</DataTemplate>
+
+	<DataTemplate x:Key="JobResultListItemTemplate">
+		<Border x:Name="TagBorder" Background="#FFC7C7C7" CornerRadius="8" Margin="0,0,3,3">
+			<StackPanel>
+				<Label Content="Job: 019999901"></Label>
+				<ListBox></ListBox>
+			</StackPanel>
+		</Border>
+
+	</DataTemplate>
+
+</ResourceDictionary>

@@ -12,6 +12,7 @@
 					</s:ApplicationLoader.Bootstrapper>
 				</s:ApplicationLoader>
 				<ResourceDictionary Source="Themes\Styles.xaml" />
+				<ResourceDictionary Source="Themes\ControlTemplates.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 		</ResourceDictionary>
 	</Application.Resources>
