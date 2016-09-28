@@ -21,7 +21,7 @@
 					<Button x:Name="buttSerachJobDir" Content="S" Padding="1" Margin="2,0,3,0" Width="25" Height="25" Click="buttSerachJobDir_Click"/>
 					<Button x:Name="buttCopyJobNo" Content="C" Padding="1" Margin="2,0,3,0" Width="18" Click="buttCopyJobNo_Click"></Button>
 					<Button x:Name="buttPasteJobNo" Content="P" Margin="2,0,3,0" Width="18" Click="buttPasteJobNo_Click"></Button>
-					<Button x:Name="buttShowOptions" Content="OPT" Margin="2,0,3,0" Click="buttShowOptions_Click"></Button>
+					<Button x:Name="buttShowOptions" Content="OPT" Margin="2,0,3,0" Padding="3" Click="buttShowOptions_Click"></Button>
 				</StackPanel>
 				<StackPanel Margin="3,0,2,2">
 					<CheckBox Content="Immer im Vordergrund" FontSize="10" Margin="3"></CheckBox>

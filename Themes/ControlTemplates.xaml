@@ -23,11 +23,23 @@
 	</DataTemplate>
 
 	<DataTemplate x:Key="JobResultListItemTemplate">
-		<Border x:Name="TagBorder" Background="#FFC7C7C7" CornerRadius="8" Margin="0,0,3,3">
+		<Border x:Name="TagBorder" CornerRadius="8" Margin="0,0,3,3" Background="{DynamicResource WindowBackgroundBrush}">
+			<Grid>
+				<!-- Background="#FFC7C7C7" -->
+				<Grid.RowDefinitions>
+					<RowDefinition Height="45"></RowDefinition>
+					<RowDefinition Height="45"></RowDefinition>
+				</Grid.RowDefinitions>
 			<StackPanel>
 				<Label Content="Job: 019999901"></Label>
-				<ListBox></ListBox>
+				<ListBox>
+						<ListBox.Items>
+							hallo
+							welt
+						</ListBox.Items>
+				</ListBox>
 			</StackPanel>
+			</Grid>
 		</Border>
 
 	</DataTemplate>
