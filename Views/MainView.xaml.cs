@@ -23,5 +23,25 @@ namespace JobDirSearch_WPF.Views
 		{
 			InitializeComponent ();
 		}
+
+		private void buttSerachJobDir_Click (object sender, RoutedEventArgs e)
+		{
+			//	Suche durchführen
+		}
+
+		private void buttCopyJobNo_Click (object sender, RoutedEventArgs e)
+		{
+			//	Kopieren der Jobnummer aus dem Eingabefeld
+		}
+
+		private void buttPasteJobNo_Click (object sender, RoutedEventArgs e)
+		{
+			//	Einfügen einer Jobnummer in das Eingabefeld
+		}
+
+		private void buttShowOptions_Click (object sender, RoutedEventArgs e)
+		{
+			//	Anzeigen des Optionen Dialogs
+		}
 	}
 }
