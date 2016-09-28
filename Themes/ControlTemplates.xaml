@@ -1,47 +1,76 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-					xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                    xmlns:local="clr-namespace:JobDirSearch_WPF.Themes">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"					
+                    xmlns:local="clr-namespace:JobDirSearch_WPF.Themes"
+                    xmlns:res="clr-namespace:JobDirSearch_WPF.Resources"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                    xmlns:System="clr-namespace:System;assembly=mscorlib" mc:Ignorable="d">
 
-	<DataTemplate x:Key="JobDirListItemTemplate">
-		<Expander IsExpanded="True" Margin="0,0,0,5">
-			<Expander.Header>
-				<Grid Width="250">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="2*"></ColumnDefinition>
-						<ColumnDefinition Width="1*"></ColumnDefinition>
-					</Grid.ColumnDefinitions>
-					<Label Content="[JOBPfad]" Grid.Column="0"/>
-					<Label Content="Gefunden:" Grid.Column="1"/>
-					<Label Content="XXX" Grid.Column="1" HorizontalAlignment="Right"/>
-				</Grid>
-			</Expander.Header>
-			<Grid Background="{DynamicResource WindowBackgroundBrush}">
-				<ItemsControl ItemTemplate="{DynamicResource JobResultListItemTemplate}" AlternationCount="2" /> <!--  ItemsSource="{Binding ServerManagement.ServerList}" -->
-			</Grid>
-		</Expander>
-	</DataTemplate>
 
-	<DataTemplate x:Key="JobResultListItemTemplate">
-		<Border x:Name="TagBorder" CornerRadius="8" Margin="0,0,3,3" Background="{DynamicResource WindowBackgroundBrush}">
-			<Grid>
-				<!-- Background="#FFC7C7C7" -->
-				<Grid.RowDefinitions>
-					<RowDefinition Height="45"></RowDefinition>
-					<RowDefinition Height="45"></RowDefinition>
-				</Grid.RowDefinitions>
-			<StackPanel>
-				<Label Content="Job: 019999901"></Label>
-				<ListBox>
-						<ListBox.Items>
-							hallo
-							welt
-						</ListBox.Items>
-				</ListBox>
-			</StackPanel>
-			</Grid>
-		</Border>
+    <BitmapImage x:Key="ImageSourceCheckedTag" UriSource="/Resources/checked.png"/>
 
-	</DataTemplate>
+    <DataTemplate x:Key="JobDirListItemTemplate">
+        <Expander IsExpanded="True" Margin="0,0,0,5">
+            <Expander.Header>
+                <Grid Width="250">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="[JOBPfad]" Grid.Column="0"/>
+                    <Label Content="Gefunden:" Grid.Column="1"/>
+                    <Label Content="XXX" Grid.Column="1" HorizontalAlignment="Right"/>
+                </Grid>
+            </Expander.Header>
+            <Grid Background="{DynamicResource WindowBackgroundBrush}">
+                <ItemsControl ItemTemplate="{DynamicResource JobResultListItemTemplate}" AlternationCount="2" />
+                <!--  ItemsSource="{Binding ServerManagement.ServerList}" -->
+            </Grid>
+        </Expander>
+    </DataTemplate>
+
+    <DataTemplate x:Key="JobResultListItemTemplate">
+        <Border x:Name="TagBorder" CornerRadius="8" Margin="0,0,3,3" Background="{DynamicResource WindowBackgroundBrush}" d:DesignWidth="360" d:DesignHeight="99">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel >
+                    <Label Content="Job: 019999901"/>
+                    <ComboBox HorizontalAlignment="Stretch" Margin="10,5,10,0" Width="150" >
+                        <System:String>hallo welt</System:String>
+                        <System:String>hallo welt</System:String>
+                        <System:String>hallo welt</System:String>
+                        <System:String>hallo welt</System:String>
+                    </ComboBox>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="5">
+                        <Button Name="OpenTCButton">
+                            <Viewbox Margin="3" x:Name="TCIcon">
+                                <Image Source="{DynamicResource ImageSourceCheckedTag}" Width="32" Height="32"/>
+                            </Viewbox>
+                        </Button>
+                        <StackPanel VerticalAlignment="Center" Margin="5">
+                            <CheckBox Content="Neuer Tab" IsChecked="True"></CheckBox>
+                            <CheckBox Content="Neue Instanz"></CheckBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0" VerticalAlignment="Stretch" HorizontalAlignment="Right" >
+                    <Button ToolTip="Autostop öffnen" Width="50" Height="50" Margin="5" Name="OpenAutoStopButton" Background="{DynamicResource ButtonBackground}">
+                        <Viewbox Width="32" Height="32" Margin="5" x:Name="AutoStopIcon">
+                            <Image Source="{DynamicResource ImageSourceCheckedTag}" ToolTip="AutoStop.txt öffnen" Width="32" Height="32" Margin="0"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="JobIni öffnen" Width="50" Height="50" Margin="5" Name="OpenJobIniButton" Background="{DynamicResource ButtonBackground}">
+                        <Viewbox Width="32" Height="32" Margin="5" x:Name="JobIniIcon">
+                            <Image Source="{DynamicResource ImageSourceCheckedTag}"/>
+                        </Viewbox>
+                    </Button>
+                    <Button ToolTip="CustomDB öffnen" Width="50" Height="50" Margin="5" Name="OpenCustomDBButton" Background="{DynamicResource ButtonBackground}">
+                        <Viewbox Width="32" Height="32" Margin="5" x:Name="CustomDBIcon">
+                            <Image Source="{DynamicResource ImageSourceCheckedTag}" ToolTip="CustomDB öffnen" Width="32" Height="32"/>
+                        </Viewbox>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </DataTemplate>
 
 </ResourceDictionary>
