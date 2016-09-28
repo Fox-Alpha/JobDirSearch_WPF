@@ -30,7 +30,7 @@
 		</StackPanel>
 		<ScrollViewer Grid.Row="1">
 			<StackPanel Margin="5">
-				<ItemsControl ItemTemplate="{DynamicResource JobResultListItemTemplate}" AlternationCount="2" /> <!--  ItemsSource="{Binding ServerManagement.ServerList}" -->
+				<ItemsControl ItemTemplate="{DynamicResource JobDirListItemTemplate}" AlternationCount="2" /> <!--  ItemsSource="{Binding ServerManagement.ServerList}" -->
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
