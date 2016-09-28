@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JobDirSearch_WPF.Views"
         mc:Ignorable="d"
-        Title="MainView" Height="300" Width="300">
+        Title="JobDirSearch" Height="300" Width="300" WindowStyle="ThreeDBorderWindow" SnapsToDevicePixels="True" ShowInTaskbar="False">
 	<Grid Background="{DynamicResource WindowBackgroundBrush}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
@@ -13,14 +13,15 @@
 		</Grid.RowDefinitions>
 		<StackPanel Margin="5" Grid.Row="0" Orientation="Horizontal" Background="{DynamicResource WindowBackgroundBrush}">
 			<StackPanel>
+				<Label Content="Job Nummer:"></Label>
 				<TextBox AcceptsReturn="True" MaxLength="10" Width="145" Height="18" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Top"></TextBox>
 			</StackPanel>
 			<StackPanel>
 				<StackPanel Orientation="Horizontal" Margin="5">
-					<Button Content="S" Padding="1" Margin="2,0,3,0" Width="25" Height="25"></Button>
-					<Button Content="C" Padding="1" Margin="2,0,3,0" Width="18"></Button>
-					<Button Content="P" Margin="2,0,3,0" Width="18"></Button>
-					<Button Content="OPT" Margin="2,0,3,0"></Button>
+					<Button x:Name="buttSerachJobDir" Content="S" Padding="1" Margin="2,0,3,0" Width="25" Height="25" Click="buttSerachJobDir_Click"/>
+					<Button x:Name="buttCopyJobNo" Content="C" Padding="1" Margin="2,0,3,0" Width="18" Click="buttCopyJobNo_Click"></Button>
+					<Button x:Name="buttPasteJobNo" Content="P" Margin="2,0,3,0" Width="18" Click="buttPasteJobNo_Click"></Button>
+					<Button x:Name="buttShowOptions" Content="OPT" Margin="2,0,3,0" Click="buttShowOptions_Click"></Button>
 				</StackPanel>
 				<StackPanel Margin="3,0,2,2">
 					<CheckBox Content="Immer im Vordergrund" FontSize="10" Margin="3"></CheckBox>
@@ -29,9 +30,7 @@
 		</StackPanel>
 		<ScrollViewer Grid.Row="1">
 			<StackPanel Margin="5">
-				<Expander Header="Profiles" IsExpanded="True" Margin="0,0,0,5">
-					<Grid Background="{DynamicResource WindowBackgroundBrush}"></Grid>
-				</Expander>
+				<ItemsControl ItemTemplate="{DynamicResource JobResultListItemTemplate}" AlternationCount="2" /> <!--  ItemsSource="{Binding ServerManagement.ServerList}" -->
 			</StackPanel>
 		</ScrollViewer>
 	</Grid>
