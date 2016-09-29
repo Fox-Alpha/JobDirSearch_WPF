@@ -35,13 +35,15 @@ namespace JobDirSearch_WPF.Views
 
 		private void buttCopyJobNo_Click (object sender, RoutedEventArgs e)
 		{
-			//	Kopieren der Jobnummer aus dem Eingabefeld
-		}
+            //	Kopieren der Jobnummer aus dem Eingabefeld
+            Clipboard.SetData (DataFormats.Text, (object) tbJobDirSearchBox.Text);
+        }
 
 		private void buttPasteJobNo_Click (object sender, RoutedEventArgs e)
 		{
-			//	Einfügen einer Jobnummer in das Eingabefeld
-		}
+            //	Einfügen einer Jobnummer in das Eingabefeld
+            tbJobDirSearchBox.Text = Clipboard.GetText ().Trim ();
+        }
 
 		private void buttShowOptions_Click (object sender, RoutedEventArgs e)
 		{
